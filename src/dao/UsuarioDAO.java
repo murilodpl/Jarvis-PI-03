@@ -52,7 +52,7 @@ public class UsuarioDAO {
             }
         }
     }
-
+    
     // Read
     public void read(String emailUser) {
         BD bd = new BD();

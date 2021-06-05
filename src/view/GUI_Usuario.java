@@ -159,7 +159,7 @@ public class GUI_Usuario {
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 		 		Usuario usuarioCreate = new Usuario();
-		 		
+		 	
 		 		if(tfEmailUser.getText().isEmpty()) {
 		 			JOptionPane.showMessageDialog(null, "Digite um e-mail!");
 		 		}else {		
