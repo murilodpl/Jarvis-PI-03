@@ -3,6 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import javax.swing.JOptionPane;
+
 import classes.Projeto;
 import database.BD;
 
@@ -133,6 +135,7 @@ public class ProjetoDAO {
 				}
 				if (conn == true) {
 					bd.close();
+					JOptionPane.showMessageDialog(null, "Projeto criado com sucesso!");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

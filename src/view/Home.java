@@ -85,14 +85,14 @@ public class Home {
 		btnLogout.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		btnLogout.setBounds(344, 448, 150, 34);
 		frmHome.getContentPane().add(btnLogout);
-		btnLogout.setBackground(Color.PINK);
-
+		btnLogout.setBackground(Color.getHSBColor(0F,  0.4F,  1.0F));
+		
 		JButton btnCreateProj = new JButton("Criar Projeto");
 		btnCreateProj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frmHome.dispose();
-				//CadastroProjeto cProjpage = new CadastroProjeto();
-				//cProjpage.frmCadastro.setVisible(true);
+				ProjetoGUI cProjpage = new ProjetoGUI();
+				cProjpage.frmProjeto.setVisible(true);
 			}
 		});
 		btnCreateProj.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
@@ -178,6 +178,13 @@ public class Home {
 		frmHome.getContentPane().add(btnCdigoProjeto);
 		
 		JButton btnCreateTarefa = new JButton("Criar Tarefa");
+		btnCreateTarefa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmHome.dispose();
+				TarefaGUI cTaskpage = new TarefaGUI();
+				cTaskpage.frmTask.setVisible(true);
+			}
+		});
 		btnCreateTarefa.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		btnCreateTarefa.setBounds(170, 448, 164, 34);
 		frmHome.getContentPane().add(btnCreateTarefa);
