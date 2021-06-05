@@ -1,0 +1,79 @@
+	Usuário
+INSERT INTO usuario (emailUser, passwordUser, nameUser, foneUser)
+VALUES ('calvesrodrig@gmail.com', '11092001ter', 'cainho', '19 99345786');
+
+INSERT INTO usuario (emailUser, passwordUser, nameUser, foneUser)
+VALUES ('andersoms.automotivos@uol.com.br', '1234andersoms', 'AnderSom', '11 974532123');
+
+INSERT INTO usuario (emailUser, passwordUser, nameUser, foneUser)
+VALUES ('neymal@bol.com.br', 'goldeplaca', 'Neydelas', '17 968357486');
+
+INSERT INTO usuario (emailUser, passwordUser, nameUser, foneUser)
+VALUES ('jorgedasilva1@outlook.com', '33outlook2335@', 'JSilva', '15 987596005');
+
+INSERT INTO usuario (emailUser, passwordUser, nameUser, foneUser)
+VALUES ('fabio.gamer@hotmail.com', 'psycho002', 'xXfabinh0Xx', '16 998325006');
+
+
+
+	Projeto
+INSERT INTO projeto (nameProj, descProj, equipeProj, emailUser)
+VALUES ('PI', 'projeto interdisciplinar','cesar, carlos, gabriel, murilo', 1, 'jorgedasilva1@outlook.com');
+
+INSERT INTO projeto (nameProj, descProj, equipeProj, emailUser)
+VALUES ('Regime', 'fazer dieta','leonardo', 'neymal@bol.com.br');
+
+INSERT INTO projeto (nameProj, descProj, equipeProj, emailUser)
+VALUES ('Lição de casa', 'fazer exercícios da apostila','gustavo, greg', 'andersoms.automotivos@uol.com.br');
+
+INSERT INTO projeto (nameProj, descProj, equipeProj, emailUser)
+VALUES ('Composição', 'compor música do zero','gerson', 'fabio.gamer@hotmail.com');
+
+INSERT INTO projeto (nameProj, descProj, equipeProj, emailUser)
+VALUES ('Desenho Brabo', 'fazer desenho realista','rayssa', 'calvesrodrig@gmail.com');
+
+
+
+	Tarefa
+INSERT INTO tarefa ( nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto, emailUser)
+VALUES ( "Ajustar os indices das tabelas", "Os indices das tabelas 'nome' e 'idade' precisam ser redefinidos", "2021-04-29", "2021-05-01", 1, 'fabio.gamer@hotmail.com');
+
+INSERT INTO tarefa ( nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto, emailUser)
+VALUES ( "Modificar o titulo", "O titulo do segundo artigo precisa ser modificado para algo mais sutil", "2021-04-29", "2021-05-02", 2, 'jorgedasilva1@outlook.com');
+
+INSERT INTO tarefa ( nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto, emailUser)
+VALUES ( "Enviar os pedidos", "Os pedidos de quarta feira precisam ser enviados ao destinatario de campinas", "2021-04-30", "2021-05-04", 5, 'neymal@bol.com.br');
+
+INSERT INTO tarefa ( nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto, emailUser)
+VALUES ( "Enviar o feedback", "Todos os funcionários devem enviar o feedback do projeto da empresa", "2021-04-30", "2021-05-07", 4, 'andersoms.automotivos@uol.com.br');
+
+INSERT INTO tarefa ( nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto, emailUser)
+VALUES ("Checar os valores dos produtos", "Os valores da tabela de produtos devem ser verificados com base nos preços fornecidos", "2021-04-30", "2021-05-03", 3, 'calvesrodrig@gmail.com');
+
+
+
+	Participação	
+INSERT INTO participacao (emailUser, codTarefa, status)
+VALUES ('neymal@bol.com.br', 1, 'Finalizado');
+
+INSERT INTO participacao (emailUser, codTarefa, status)
+VALUES ('jorgedasilva1@outlook.com', 2, 'Aguardando');
+
+INSERT INTO participacao (emailUser, codTarefa, status)
+VALUES ('fabio.gamer@hotmail.com', 3, 'Desenvolvendo');
+
+INSERT INTO participacao (emailUser, codTarefa, status)
+VALUES ('calvesrodrig@gmail.com', 4, 'Enviado');
+
+INSERT INTO participacao (emailUser, codTarefa, status)
+VALUES ('andersoms.automotivos@uol.com.br', 5, 'Com Finalizado');
+
+
+
+
+
+
+
+
+
+

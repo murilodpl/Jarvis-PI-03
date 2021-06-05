@@ -1,0 +1,39 @@
+create database pi3;
+use pi3;
+
+CREATE TABLE usuario (
+emailUser varchar(150) PRIMARY KEY NOT NULL,
+passwordUser varchar(50) NOT NULL,
+nameUser varchar(150) NOT NULL,
+foneUser varchar(15) NOT NULL
+);
+
+CREATE TABLE projeto (
+codProjeto int PRIMARY KEY NOT NULL auto_increment,
+nameProj varchar(100) NOT NULL,
+descProj varchar(250),
+equipeProj varchar(250),
+emailUser varchar(150)
+);
+
+CREATE TABLE tarefa (
+codTarefa int PRIMARY KEY NOT NULL auto_increment,
+nameTarefa varchar(100) NOT NULL,
+descTarefa varchar(250),
+data_inic_tarefa date,
+data_final_tarefa date,
+codProjeto int,
+emailUser varchar(150)
+);
+
+CREATE TABLE participacao(
+emailUser varchar(150),
+codTarefa int,
+status varchar(100),
+FOREIGN KEY (emailUser) REFERENCES usuario(emailUser),
+FOREIGN KEY (codTarefa) REFERENCES tarefa(codTarefa)
+);
+
+ALTER TABLE `tarefa` ADD CONSTRAINT `fk_projeto` FOREIGN KEY ( `codProjeto` ) REFERENCES `projeto` ( `codProjeto` ) ;
+ALTER TABLE `tarefa` ADD CONSTRAINT `tarefa-fk_user` FOREIGN KEY ( `emailUser` ) REFERENCES `usuario` ( `emailUser` ) ;
+ALTER TABLE `projeto` ADD CONSTRAINT `projeto-fk_user` FOREIGN KEY ( `emailUser` ) REFERENCES `usuario` ( `emailUser` ) ;
