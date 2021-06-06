@@ -166,7 +166,7 @@ public class TarefaGUI {
 			}
 		});
 		btnDeletar.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
-		btnDeletar.setBounds(243, 266, 251, 32);
+		btnDeletar.setBounds(243, 266, 120, 32);
 		frmTask.getContentPane().add(btnDeletar);
 		
 		JButton btnBackHome = new JButton("Voltar");
@@ -301,6 +301,16 @@ public class TarefaGUI {
 		lblCdigoDoProjeto.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		lblCdigoDoProjeto.setBounds(267, 319, 188, 16);
 		frmTask.getContentPane().add(lblCdigoDoProjeto);
+		
+		JButton btnVer = new JButton("Ver");
+		btnVer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(btnVer, tableTask.getValueAt(tableTask.getSelectedRow(), tableTask.getSelectedColumn()).toString());
+			}
+		});
+		btnVer.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
+		btnVer.setBounds(374, 266, 120, 32);
+		frmTask.getContentPane().add(btnVer);
 	}
 	
 	//Limpa campos

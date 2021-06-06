@@ -151,7 +151,7 @@ public class ProjetoGUI {
 			}
 		});
 		btnDeletar.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
-		btnDeletar.setBounds(164, 266, 330, 32);
+		btnDeletar.setBounds(164, 266, 162, 32);
 		frmProjeto.getContentPane().add(btnDeletar);
 		
 		JButton btnBackHome = new JButton("Voltar");
@@ -254,6 +254,16 @@ public class ProjetoGUI {
 		btnClear.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		btnClear.setBounds(10, 480, 145, 32);
 		frmProjeto.getContentPane().add(btnClear);
+		
+		JButton btnVer = new JButton("Ver");
+		btnVer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(btnVer, table.getValueAt(table.getSelectedRow(), table.getSelectedColumn()).toString());
+			}
+		});
+		btnVer.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
+		btnVer.setBounds(332, 266, 162, 32);
+		frmProjeto.getContentPane().add(btnVer);
 	}
 	
 	//Limpa campos

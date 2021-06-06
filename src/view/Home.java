@@ -24,6 +24,7 @@ import java.sql.PreparedStatement;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 public class Home {
 
@@ -100,7 +101,7 @@ public class Home {
 		frmHome.getContentPane().add(btnCreateProj);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 68, 484, 184);
+		scrollPane.setBounds(10, 98, 484, 184);
 		frmHome.getContentPane().add(scrollPane);
 
 		tableTasks = new JTable(model);
@@ -147,7 +148,7 @@ public class Home {
 			}
 		});
 		btnOrderByNome.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
-		btnOrderByNome.setBounds(344, 285, 150, 34);
+		btnOrderByNome.setBounds(344, 315, 150, 34);
 		frmHome.getContentPane().add(btnOrderByNome);
 		
 		JButton btnOrderByCod = new JButton("C\u00F3digo Tarefa");
@@ -158,12 +159,12 @@ public class Home {
 			}
 		});
 		btnOrderByCod.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
-		btnOrderByCod.setBounds(10, 285, 150, 34);
+		btnOrderByCod.setBounds(10, 315, 150, 34);
 		frmHome.getContentPane().add(btnOrderByCod);
 		
 		JLabel lblNewLabel_1 = new JLabel("Ordenar por:");
 		lblNewLabel_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(10, 263, 77, 16);
+		lblNewLabel_1.setBounds(10, 293, 77, 16);
 		frmHome.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnCdigoProjeto = new JButton("C\u00F3digo Projeto");
@@ -174,7 +175,7 @@ public class Home {
 			}
 		});
 		btnCdigoProjeto.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
-		btnCdigoProjeto.setBounds(170, 285, 164, 34);
+		btnCdigoProjeto.setBounds(170, 315, 164, 34);
 		frmHome.getContentPane().add(btnCdigoProjeto);
 		
 		JButton btnCreateTarefa = new JButton("Criar Tarefa");
@@ -188,6 +189,26 @@ public class Home {
 		btnCreateTarefa.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		btnCreateTarefa.setBounds(170, 448, 164, 34);
 		frmHome.getContentPane().add(btnCreateTarefa);
+		
+		JButton btnSee = new JButton("Ver");
+		btnSee.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(btnSee, tableTasks.getValueAt(tableTasks.getSelectedRow(), tableTasks.getSelectedColumn()).toString());
+			}
+		});
+		btnSee.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
+		btnSee.setBounds(10, 387, 484, 34);
+		frmHome.getContentPane().add(btnSee);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Selecione uma celula e veja ela inteira:");
+		lblNewLabel_1_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
+		lblNewLabel_1_1.setBounds(10, 360, 255, 16);
+		frmHome.getContentPane().add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Tarefas com a data final pr\u00F3xima:");
+		lblNewLabel_1_2.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 16));
+		lblNewLabel_1_2.setBounds(10, 68, 484, 25);
+		frmHome.getContentPane().add(lblNewLabel_1_2);
 	}
 
 	// Atualizar tabela
@@ -196,7 +217,7 @@ public class Home {
 		model.getDataVector().removeAllElements();
 		BD bd = new BD();
 
-		String sql = "SELECT codTarefa, nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto FROM tarefa where emailUser = ? " + orderBy;
+		String sql = "SELECT codTarefa, nameTarefa, descTarefa, data_inic_tarefa, data_final_tarefa, codProjeto FROM tarefa where emailUser = ? and data_final_tarefa between curdate() and curdate()+7 " + orderBy;
 
 		boolean conn = false;
 		PreparedStatement pstm = null;
