@@ -126,7 +126,8 @@ public class ProjetoGUI {
 		 			projeto.setNomeProjeto(tfNome.getText());
 		 			projeto.setEmailUser(lpage.emailLogin);
 		 			projetoDao.create(projeto);				
-					atualizarProj();
+					JOptionPane.showMessageDialog(btnCreate, "Projeto criado com sucesso!!");
+		 			atualizarProj();
 					clear();
 		 		}
 			}
@@ -142,6 +143,7 @@ public class ProjetoGUI {
 		 			JOptionPane.showMessageDialog(null, "Digite um código!");
 		 		}else {		 			
 		 			projetoDao.delete(Integer.parseInt(tfCod.getText()));
+		 			JOptionPane.showMessageDialog(btnDeletar, "Projeto deletado com sucesso!");
 		 		}
 				
 				atualizarProj();
@@ -224,6 +226,7 @@ public class ProjetoGUI {
 				projeto.setEmailUser(lpage.emailLogin);
 				
 				projetoDao.update(projeto);
+				JOptionPane.showMessageDialog(btnUpdate, "Projeto atualizado com sucesso!");
 				atualizarProj();
 			}
 		});
@@ -258,8 +261,9 @@ public class ProjetoGUI {
 		tfCod.setText("");
 		tfNome.setText("");
 		tfDesc.setText("");
-		tfEquipe.setText("");
+		tfEquipe.setText("");		
 		tfCod.requestFocus();
+		projeto.clear();
 	}
 	// Atualizar tabela
 	private void atualizarProj() {

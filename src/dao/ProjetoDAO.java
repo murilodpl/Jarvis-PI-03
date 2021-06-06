@@ -1,6 +1,5 @@
 package dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javax.swing.JOptionPane;
@@ -24,7 +23,7 @@ public class ProjetoDAO {
 		PreparedStatement pstm = null;
 
 		try {
-			// criar uma conexão com o banco de dados
+			// criar uma conexï¿½o com o banco de dados
 			conn = bd.getConnection();
 
 			pstm = bd.con.prepareStatement(sql);
@@ -36,9 +35,9 @@ public class ProjetoDAO {
 			// executar a query
 			pstm.execute();
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e);
 		} finally {
-			// fechar as conexões
+			// fechar as conexï¿½es
 			try {
 				if (pstm != null) {
 					pstm.close();
@@ -47,7 +46,7 @@ public class ProjetoDAO {
 					bd.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e);
 			}
 		}
 	}
@@ -63,7 +62,7 @@ public class ProjetoDAO {
 		PreparedStatement pstm = null;
 
 		try {
-			// criar uma conexão com o banco de dados
+			// criar uma conexï¿½o com o banco de dados
 			conn = bd.getConnection();
 			
 			pstm = bd.con.prepareStatement(sql);
@@ -81,9 +80,9 @@ public class ProjetoDAO {
 				System.out.format("%s, %s, %s, %s, %s\n", codProjeto, nameProj, descProj, equipeProj, emailUser);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e);
 		} finally {
-			// fechar as conexões
+			// fechar as conexï¿½es
 			try {
 				if (pstm != null) {
 					pstm.close();
@@ -92,7 +91,7 @@ public class ProjetoDAO {
 					bd.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e);
 			}
 		}
 	}
@@ -106,7 +105,7 @@ public class ProjetoDAO {
 		PreparedStatement pstm = null;
 
 		try {
-			// criar uma conexão com o banco de dados
+			// criar uma conexï¿½o com o banco de dados
 			conn = bd.getConnection();
 
 			pstm = bd.con.prepareStatement(sql);
@@ -126,19 +125,18 @@ public class ProjetoDAO {
 				System.out.format("%s, %s, %s, %s, %s\n", codProjeto, nameProj, descProj, equipeProj, emailUser);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e);
 		} finally {
-			// fechar as conexões
+			// fechar as conexï¿½es
 			try {
 				if (pstm != null) {
 					pstm.close();
 				}
 				if (conn == true) {
 					bd.close();
-					JOptionPane.showMessageDialog(null, "Projeto criado com sucesso!");
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e);
 			}
 		}
 	}
@@ -156,7 +154,7 @@ public class ProjetoDAO {
 		PreparedStatement pstm = null, pstmRead = null;
 
 		try {
-			// criar uma conexão com o banco de dados
+			// criar uma conexï¿½o com o banco de dados
 			conn = bd.getConnection();
 			
 			pstmRead = bd.con.prepareStatement(sqlRead);
@@ -171,7 +169,7 @@ public class ProjetoDAO {
 				emailUser = bd.rs.getString("emailUser");
 			}
 			
-			//Algumas condições caso o usuário não insira nada em algum campo, assim mantendo o que tinha anteriormente
+			//Algumas condiï¿½ï¿½es caso o usuï¿½rio nï¿½o insira nada em algum campo, assim mantendo o que tinha anteriormente
 			pstm = bd.con.prepareStatement(sql);
 			if(projeto.getNomeProjeto() != null && projeto.getNomeProjeto() != "" && projeto.getNomeProjeto() != " ") {				
 				pstm.setString(1, projeto.getNomeProjeto());
@@ -202,9 +200,9 @@ public class ProjetoDAO {
 			// executar a query
 			pstm.executeUpdate();		      
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e);
 		} finally {
-			// fechar as conexões
+			// fechar as conexï¿½es
 			try {
 				if (pstm != null) {
 					pstm.close();
@@ -213,7 +211,7 @@ public class ProjetoDAO {
 					bd.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e);
 			}
 		}
 	}
@@ -229,7 +227,7 @@ public class ProjetoDAO {
 		PreparedStatement pstm = null;
 
 		try {
-			// criar uma conexão com o banco de dados
+			// criar uma conexï¿½o com o banco de dados
 			conn = bd.getConnection();
 
 			pstm = bd.con.prepareStatement(sql);
@@ -238,9 +236,9 @@ public class ProjetoDAO {
 			// executar a query
 			pstm.executeUpdate();		      
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e);
 		} finally {
-			// fechar as conexões
+			// fechar as conexï¿½es
 			try {
 				if (pstm != null) {
 					pstm.close();
@@ -249,7 +247,7 @@ public class ProjetoDAO {
 					bd.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, e);
 			}
 		}
 	}

@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 public class BD {
 	public Connection con = null; // objeto de conexão
 	public PreparedStatement st = null; // executa instruções em SQL
@@ -29,14 +31,14 @@ public class BD {
 			Class.forName(DRIVER); //carregando o Driver para ser utilizado
 			con = DriverManager.getConnection(URL,LOGIN,SENHA);
 //			con = DriverManager.getConnection(URL);
-			System.out.println("Conectou...");
+//			System.out.println("Conectou...");
 			return true;
 		}
 		catch(ClassNotFoundException erro) {
-			System.out.println("Falha no carregamento do driver");
+			JOptionPane.showMessageDialog(null, "Falha no carregamento do driver");
 		} 
 		catch (SQLException erro) {
-			System.out.println(erro.toString());
+			JOptionPane.showMessageDialog(null, erro.toString());
 		}
 		return false;
 	}
@@ -50,17 +52,9 @@ public class BD {
 		try {
 			if(con!=null) {
 				con.close();
-				System.out.println("Desconectou...");
+//				System.out.println("Desconectou...");
 			}
 		}
 		catch(SQLException erro) {}
-	}
-	
-	
-	/*public static void main(String[] args) {
-		BD_Auth bd = new BD_Auth();
-		bd.getConnection();
-		bd.close();
-	}*/
-	
+	}	
 }

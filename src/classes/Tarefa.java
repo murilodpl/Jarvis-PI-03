@@ -68,13 +68,6 @@ public class Tarefa {
 		this.emailUser = "";
 	}
 	
-	public Tarefa(int codTarefa, String nomeTarefa, int codProjeto, String emailUser) {
-		this.codTarefa = codTarefa;	
-		this.nomeTarefa = nomeTarefa;
-		this.codProjeto = codProjeto;
-		this.emailUser = emailUser;
-	}
-	
 	public Tarefa(int codTarefa, String nomeTarefa, String descricaoTarefa, String dataInicio, String dataFim, int codProjeto, String emailUser) {
 		this.codTarefa = codTarefa;	
 		this.nomeTarefa = nomeTarefa;
@@ -85,22 +78,16 @@ public class Tarefa {
 		this.emailUser = emailUser;
 	}
 	
-	/**
-	 * Essa classe altera as informações da tarefa.
-	 * 
-	 * @param nomeTarefa        - Nome da tarefa
-	 * @param descricaoTarefa   - Descrição da tarefa
-	 * @param dataInicio        - Data de inicio da tarefa
-	 * @param dataFim           - Data de termino da tarefa
-	 * @param codProjeto        - Codigo do projeto que a tarefa pertence
-	 * @param emailUser         - Email do usuário cadastrado
+	/*
+	 * Método feita para zerar todos os valores!
 	 */
-	public void alterTarefa(String nomeTarefa, String descricaoTarefa, String dataInicio, String dataFim, int codProjeto, String emailUser) {
-		this.nomeTarefa = nomeTarefa;
-		this.descricaoTarefa = descricaoTarefa;
-		this.dataInicio = dataInicio; 
-		this.dataFim = dataFim; 
-		this.codProjeto = codProjeto;
-		this.emailUser = emailUser;
+	public void clear() {
+		this.codTarefa = 0;	
+		this.nomeTarefa = "";			
+		this.descricaoTarefa = ""; 
+		this.dataInicio = ""; 
+		this.dataFim = ""; 
+		this.codProjeto = 0;
+		this.emailUser = "";
 	}
 }

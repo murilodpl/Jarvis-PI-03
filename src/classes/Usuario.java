@@ -61,17 +61,4 @@ public class Usuario {
         this.nome = nome;
         this.telefone = telefone;
     }
-    
-    /**
-     * Essa classe altera as informações do usuário.
-     * 
-     * @param senha      - Senha do usuário
-     * @param nome       - Nome do usuário
-     * @param telefone   - Telefone do usuário
-     */
-    public void alterUsuario(String senha, String nome, String telefone) {
-        this.senha = senha;
-        this.nome = nome;
-        this.telefone = telefone;
-    }
 }

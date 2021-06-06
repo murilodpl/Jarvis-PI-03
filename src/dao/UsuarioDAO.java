@@ -1,6 +1,5 @@
 package dao;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javax.swing.JOptionPane;
@@ -36,8 +35,7 @@ public class UsuarioDAO {
             // executar a query
             pstm.execute();
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
         } finally {
             // fechar as conex�es
             try {
@@ -48,7 +46,7 @@ public class UsuarioDAO {
                     bd.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e);
             }
         }
     }
@@ -80,8 +78,7 @@ public class UsuarioDAO {
                 System.out.format("%s, %s, %s, %s\n", emailUser, passwordUser, nameUser, foneUser);
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
         } finally {
             // fechar as conex�es
             try {
@@ -92,7 +89,7 @@ public class UsuarioDAO {
                     bd.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e);
             }
         }
     }
@@ -101,7 +98,6 @@ public class UsuarioDAO {
     public void readAll() {
         BD bd = new BD();
         
-        String[] user;
         String sql = "SELECT * FROM usuario";
 
         boolean conn = false;
@@ -127,8 +123,7 @@ public class UsuarioDAO {
                 System.out.format("%s, %s, %s, %s\n", emailUser, passwordUser, nameUser, foneUser);
             }
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
         } finally {
             // fechar as conex�es
             try {
@@ -139,7 +134,7 @@ public class UsuarioDAO {
                     bd.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e);
             }
         }
     }
@@ -196,8 +191,7 @@ public class UsuarioDAO {
             // executar a query
             pstm.executeUpdate();
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
         } finally {
             // fechar as conex�es
             try {
@@ -208,7 +202,7 @@ public class UsuarioDAO {
                     bd.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e);
             }
         }
     }
@@ -232,8 +226,7 @@ public class UsuarioDAO {
             // executar a query
             pstm.executeUpdate();
         } catch (Exception e) {
-        	JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
         } finally {
             // fechar as conex�es
             try {
@@ -244,7 +237,7 @@ public class UsuarioDAO {
                     bd.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e);
             }
         }
     }

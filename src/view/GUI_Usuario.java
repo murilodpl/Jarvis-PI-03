@@ -20,8 +20,6 @@ import classes.Usuario;
 import dao.UsuarioDAO;
 import database.BD;
 
-import javax.swing.JScrollBar;
-
 public class GUI_Usuario {
 
 	private JFrame frmUsurioGui;

@@ -54,26 +54,6 @@ public class Projeto {
 		this.emailUser = "";
 	}
 	
-	public Projeto(int codProjeto, String nomeProjeto, String emailUser) {
-		this.codProjeto = codProjeto;	
-		this.nomeProjeto = nomeProjeto;
-		this.emailUser = emailUser;
-	}
-	
-	public Projeto(int codProjeto, String nomeProjeto, String descricaoProjeto, String equipeProjeto) {
-		this.codProjeto = codProjeto;	
-		this.nomeProjeto = nomeProjeto;
-		this.descricaoProjeto = descricaoProjeto;
-		this.equipeProjeto = equipeProjeto; 
-	}
-	
-	public Projeto(String nomeProjeto, String descricaoProjeto, String equipeProjeto, String emailUser) {
-		this.nomeProjeto = nomeProjeto;
-		this.descricaoProjeto = descricaoProjeto;
-		this.equipeProjeto = equipeProjeto; 
-		this.emailUser = emailUser;
-	}
-	
 	public Projeto(int codProjeto, String nomeProjeto, String descricaoProjeto, String equipeProjeto, String emailUser) {
 		this.codProjeto = codProjeto;	
 		this.nomeProjeto = nomeProjeto;
@@ -81,19 +61,15 @@ public class Projeto {
 		this.equipeProjeto = equipeProjeto; 
 		this.emailUser = emailUser;
 	}
-
-	/**
-	 * Essa classe altera as informações da projeto.
-	 * 
-	 * @param nomeProjeto        - Nome do projeto
-	 * @param descricaoProjeto   - Descrição do projeto
-	 * @param equipeProjeto      - Integrantes da equipe do projeto
-	 * @param emailUser         - Email do usuário cadastrado
+	
+	/*
+	 * Método feita para zerar todos os valores!
 	 */
-	public void alterarProjeto(String nomeProjeto, String descricaoProjeto, String equipeProjeto, String emailUser) {
-		this.nomeProjeto = nomeProjeto;
-		this.descricaoProjeto = descricaoProjeto;
-		this.equipeProjeto = equipeProjeto; 
-		this.emailUser = emailUser;
+	public void clear() {
+		this.codProjeto = 0;	
+		this.nomeProjeto = "";			
+		this.descricaoProjeto = ""; 
+		this.equipeProjeto = ""; 
+		this.emailUser = "";
 	}
 }
