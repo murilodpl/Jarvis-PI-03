@@ -15,18 +15,19 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class CadastroUsuario {
 
 	JFrame frmRegister;
 	private JTextField tfEmail;
-	private JTextField tfPass;
 	private JTextField tfPhone;
 	private JTextField tfUsername;
 	
 	Usuario usuario = new Usuario();
 	UsuarioDAO userDao = new UsuarioDAO();	
 	Login lpage = new Login();
+	private JPasswordField tfPass;
 	
 	/**
 	 * Launch the application.
@@ -76,11 +77,6 @@ public class CadastroUsuario {
 		tfEmail.setBounds(10, 74, 484, 20);
 		frmRegister.getContentPane().add(tfEmail);
 		tfEmail.setColumns(10);
-		
-		tfPass = new JTextField();
-		tfPass.setColumns(10);
-		tfPass.setBounds(10, 186, 484, 20);
-		frmRegister.getContentPane().add(tfPass);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Senha*");
 		lblNewLabel_1_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
@@ -163,6 +159,10 @@ public class CadastroUsuario {
 		btnBack.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		btnBack.setBounds(261, 289, 233, 37);
 		frmRegister.getContentPane().add(btnBack);
+		
+		tfPass = new JPasswordField();
+		tfPass.setBounds(10, 186, 484, 20);
+		frmRegister.getContentPane().add(tfPass);
 	}
 
 }

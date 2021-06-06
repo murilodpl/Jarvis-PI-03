@@ -18,16 +18,17 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class Login {
 
 	static JFrame frmLogin;
 	private JTextField tfEmail;
 	private JLabel lblNewLabel_2;
-	private JTextField tfPass;
 	private JButton btnCadastrar;
 
 	public static String emailLogin = "";
+	private JPasswordField tfPass;
 
 	/**
 	 * Launch the application.
@@ -85,11 +86,6 @@ public class Login {
 		lblNewLabel_2.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		lblNewLabel_2.setBounds(10, 111, 103, 23);
 		frmLogin.getContentPane().add(lblNewLabel_2);
-
-		tfPass = new JTextField();
-		tfPass.setColumns(10);
-		tfPass.setBounds(10, 139, 484, 20);
-		frmLogin.getContentPane().add(tfPass);
 
 		JButton btnLogin = new JButton("Entrar");
 		btnLogin.addActionListener(new ActionListener() {
@@ -157,5 +153,9 @@ public class Login {
 		btnCadastrar.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));
 		btnCadastrar.setBounds(271, 188, 223, 35);
 		frmLogin.getContentPane().add(btnCadastrar);
+		
+		tfPass = new JPasswordField();
+		tfPass.setBounds(10, 145, 484, 20);
+		frmLogin.getContentPane().add(tfPass);
 	}
 }
