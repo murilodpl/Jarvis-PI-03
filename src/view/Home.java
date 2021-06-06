@@ -80,6 +80,7 @@ public class Home {
 			public void actionPerformed(ActionEvent e) {
 				frmHome.dispose();
 				lpage.emailLogin = "";
+				lpage.frmLogin.setLocationRelativeTo(null);
 				lpage.frmLogin.setVisible(true);
 			}
 		});
@@ -93,6 +94,7 @@ public class Home {
 			public void actionPerformed(ActionEvent e) {
 				frmHome.dispose();
 				ProjetoGUI cProjpage = new ProjetoGUI();
+				cProjpage.frmProjeto.setLocationRelativeTo(null);
 				cProjpage.frmProjeto.setVisible(true);
 			}
 		});
@@ -183,6 +185,7 @@ public class Home {
 			public void actionPerformed(ActionEvent e) {
 				frmHome.dispose();
 				TarefaGUI cTaskpage = new TarefaGUI();
+				cTaskpage.frmTask.setLocationRelativeTo(null);
 				cTaskpage.frmTask.setVisible(true);
 			}
 		});

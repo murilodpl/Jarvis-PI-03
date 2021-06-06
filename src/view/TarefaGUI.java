@@ -174,6 +174,7 @@ public class TarefaGUI {
 			public void actionPerformed(ActionEvent e) {
 				frmTask.dispose();
 				Home hpage = new Home();
+				hpage.frmHome.setLocationRelativeTo(null);
 				hpage.frmHome.setVisible(true);
 			}
 		});
@@ -235,7 +236,7 @@ public class TarefaGUI {
 		 		}
 				
 				if(tfCod.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite o código da tarefa!");
+		 			JOptionPane.showMessageDialog(btnUpdate, "Digite o código da tarefa!");
 		 		}else {		 			
 		 			tarefa.setCodTarefa(Integer.parseInt(tfCod.getText()));
 					tarefa.setEmailUser(lpage.emailLogin);

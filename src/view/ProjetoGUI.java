@@ -140,7 +140,7 @@ public class ProjetoGUI {
 		btnDeletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tfCod.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite um código!");
+		 			JOptionPane.showMessageDialog(btnDeletar, "Digite um código!");
 		 		}else {		 			
 		 			projetoDao.delete(Integer.parseInt(tfCod.getText()));
 		 			JOptionPane.showMessageDialog(btnDeletar, "Projeto deletado com sucesso!");
@@ -159,6 +159,7 @@ public class ProjetoGUI {
 			public void actionPerformed(ActionEvent e) {
 				frmProjeto.dispose();
 				Home hpage = new Home();
+				hpage.frmHome.setLocationRelativeTo(null);
 				hpage.frmHome.setVisible(true);
 			}
 		});
@@ -200,7 +201,7 @@ public class ProjetoGUI {
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tfCod.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite um código!");
+		 			JOptionPane.showMessageDialog(btnUpdate, "Digite um código!");
 		 		}else {		 			
 		 			projeto.setCodProjeto(Integer.parseInt(tfCod.getText()));
 		 		}
@@ -221,13 +222,12 @@ public class ProjetoGUI {
 		 			//Not set
 		 		}else {		 			
 		 			projeto.setNomeProjeto(tfNome.getText());
+		 			projeto.setEmailUser(lpage.emailLogin);
+		 			
+		 			projetoDao.update(projeto);
+		 			JOptionPane.showMessageDialog(btnUpdate, "Projeto atualizado com sucesso!");
+		 			atualizarProj();
 		 		}
-				
-				projeto.setEmailUser(lpage.emailLogin);
-				
-				projetoDao.update(projeto);
-				JOptionPane.showMessageDialog(btnUpdate, "Projeto atualizado com sucesso!");
-				atualizarProj();
 			}
 		});
 		btnUpdate.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 14));

@@ -113,28 +113,28 @@ public class CadastroUsuario {
 				int c = 0; 
 				
 		 		if(tfEmail.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite um e-mail!");
+		 			JOptionPane.showMessageDialog(btnRegister, "Digite um e-mail!");
 		 		}else {		
 		 			usuario.setEmail(tfEmail.getText());
 		 			c++;
 		 		}
 
 		 		if(tfUsername.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite um nome!");
+		 			JOptionPane.showMessageDialog(btnRegister, "Digite um nome!");
 		 		}else {		
 		 			usuario.setNome(tfUsername.getText());
 		 			c++;
 		 		}
 		 		
 		 		if(tfPass.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite uma senha!");
+		 			JOptionPane.showMessageDialog(btnRegister, "Digite uma senha!");
 		 		}else {		
 		 			usuario.setSenha(tfPass.getText());
 		 			c++;
 		 		}
 		 		
 		 		if(tfPhone.getText().isEmpty()) {
-		 			JOptionPane.showMessageDialog(null, "Digite um telefone!");
+		 			JOptionPane.showMessageDialog(btnRegister, "Digite um telefone!");
 		 		}else {		
 		 			usuario.setTelefone(tfPhone.getText());
 		 			c++;
@@ -142,6 +142,7 @@ public class CadastroUsuario {
 		 		
 		 		if(c == 4) {
 		 			frmRegister.dispose();
+		 			lpage.frmLogin.setLocationRelativeTo(null);
 	            	lpage.frmLogin.setVisible(true);
 		 		}
 				userDao.create(usuario); 
@@ -155,6 +156,7 @@ public class CadastroUsuario {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 	 			frmRegister.dispose();
+	 			lpage.frmLogin.setLocationRelativeTo(null);
             	lpage.frmLogin.setVisible(true);
 			}
 		});

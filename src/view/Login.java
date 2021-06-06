@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 
 public class Login {
 
-	JFrame frmLogin;
+	static JFrame frmLogin;
 	private JTextField tfEmail;
 	private JLabel lblNewLabel_2;
 	private JTextField tfPass;
@@ -37,6 +37,7 @@ public class Login {
 			public void run() {
 				try {
 					Login window = new Login();
+					frmLogin.setLocationRelativeTo(null);
 					window.frmLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -116,6 +117,7 @@ public class Login {
 						// if username and password are true
 						frmLogin.dispose();
 						Home hpage = new Home();
+						hpage.frmHome.setLocationRelativeTo(null);
 						hpage.frmHome.setVisible(true);
 					} else {
 						JOptionPane.showMessageDialog(null, "E-mail ou senha incorretos!");
@@ -148,6 +150,7 @@ public class Login {
 			public void actionPerformed(ActionEvent e) {
 				frmLogin.dispose();
 				CadastroUsuario cpage = new CadastroUsuario();
+				cpage.frmRegister.setLocationRelativeTo(null);
 				cpage.frmRegister.setVisible(true);
 			}
 		});
