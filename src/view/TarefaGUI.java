@@ -85,7 +85,7 @@ public class TarefaGUI {
 			new Object[][] {
 			},
 			new String[] {
-				"C\u00F3digo Tarefa", "Nome", "Equipe", "Data inicial", "Data final", "C\u00F3digo Projeto"
+				"C\u00F3digo Tarefa", "Nome", "Descri\u00E7\u00E3o", "Data inicial", "Data final", "C\u00F3digo Projeto"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
